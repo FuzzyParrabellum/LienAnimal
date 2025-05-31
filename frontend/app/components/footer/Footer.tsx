@@ -10,9 +10,9 @@ import Logo from "../navbar/Logo";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center gap-20 px-16 py-10 w-full dark:text-animallight text-animaldark dark:bg-animaldark dark:border-animalred-dark border-t-2">
-      <div className="flex flex-col max-w-screen-xl items-start gap-20 w-full">
-        <div className="flex items-start gap-16 w-full">
+    <footer className="flex flex-col items-center gap-20 px-4 md:px-16 py-10 w-full dark:text-animallight text-animaldark dark:bg-animaldark dark:border-animalred-dark border-t-2">
+      <div className="flex flex-col max-w-screen-xl items-start w-full">
+        <div className="flex flex-col-reverse md:flex-row items-start gap-16 w-full pb-10">
           {/* Infos société */}
           <section className="flex flex-col gap-8 items-start flex-1">
             <Logo />
@@ -58,7 +58,7 @@ const Footer = () => {
           {/* Footer links */}
           <section className="w-full gap-6 flex self-center flex-1 font-bold text-gray-600">
             {/* Liens colonne de gauche */}
-            <div className="flex flex-col items-end flex-1 gap-y-8 ">
+            <div className="flex flex-col items-center md:items-end flex-1 gap-y-8 ">
               {/* <div className="flex items-start px-0 py-2 w-full"> */}
 
               <p className="flex-1  text-end hover:text-animalred">
@@ -81,7 +81,7 @@ const Footer = () => {
             </div>
 
             {/* Liens colonne de droite */}
-            <div className="flex flex-col items-end flex-1 gap-y-8">
+            <div className="flex flex-col items-center md:items-end flex-1 gap-y-8">
               {/* <div className="flex items-start px-0 py-2 w-full"> */}
 
               <p className="flex-1   text-end hover:text-animalred">
@@ -106,24 +106,24 @@ const Footer = () => {
         </div>
 
         {/* Copyrights et liens légaux */}
-        <section className="flex justify-between items-start w-full border-t-2 pt-5 ">
-          <p className="w-fit mt-[-1.00px]">
+        <section className="flex flex-col-reverse md:flex-row-reverse justify-between items-start w-full border-t-2 pt-5">
+          <p className="md:w-fit mt-5 md:mt-0 w-full text-end md:text-start">
             © 2025 LienAnimal. Tous droits réservés.
           </p>
 
-          <div className="flex items-start gap-6 text-sm">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 text-sm w-full md:w-fit border-b-2 md:border-0 pb-5 md:pb-0">
             <Link href="/">
-              <p className="w-fit mt-[-1.00px] hover:text-animalred">
+              <p className="w-fit hover:text-animalred md:mt-[3.00px]">
                 Politique de confidentialité
               </p>
             </Link>
             <Link href="/">
-              <p className="w-fit mt-[-1.00px] hover:text-animalred">
+              <p className="w-fit hover:text-animalred md:mt-[3.00px]">
                 Termes de service
               </p>
             </Link>
             <Link href="/">
-              <p className="w-fit mt-[-1.00px] hover:text-animalred">
+              <p className="w-fit hover:text-animalred  md:mt-[3.00px]">
                 Réglages des cookies
               </p>
             </Link>

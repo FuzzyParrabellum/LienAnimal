@@ -13,11 +13,11 @@ mode is enabled with LightDarkToggle */
   --color-animalpurple-light: #eed8ee;
   --color-animalcopper: #a67439;
   --color-animalcopper-light: #ede3d7;
-  --color-animalcopper-dark: #563B1D;
-  --color-animalblue: #00798C;
-  --color-animalblue-light: #00C7E6;
-  --color-animalblue-dark: #00333B;
+  --color-animalcopper-dark: #563b1d;
+  --color-animalblue: #00798c;
+  --color-animalblue-light: #00c7e6;
+  --color-animalblue-dark: #00333b;
 
-  --color-animaldark: #0B0014;
-  --color-animallight: #F6F0ED;
+  --color-animaldark: #0b0014;
+  --color-animallight: #f6f0ed;
 }

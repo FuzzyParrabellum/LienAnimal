@@ -4,12 +4,12 @@ export default function Home() {
       <section className="h-screen bg-animalcopper-light">
         <p>First section</p>
       </section>
-      <section className="h-screen bg-animalred-light">
+      {/* <section className="h-screen bg-animalred-light">
         <p>Second section</p>
       </section>
       <section className="h-screen bg-animalcopper-light">
         <p>Third section</p>
-      </section>
+      </section> */}
     </main>
   );
 }

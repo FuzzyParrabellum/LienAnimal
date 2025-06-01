@@ -1,33 +1,34 @@
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Logo from "../navbar/Logo";
 
-const MapSection = () => {
+const TestimonySection = () => {
   return (
-    <div className=" flex flex-col md:flex-row-reverse md:h-full md:justify-center gap-10 items-center">
-      <div className=" flex flex-col gap-4 px-3 md:max-w-[30rem] pt-12">
-        <p className="font-bold">Explorez</p>
+    <div className=" flex flex-col md:flex-row md:h-full md:justify-center gap-10">
+      <div className=" flex flex-col gap-4 px-3 md:max-w-[20rem] pt-12">
+        <Logo />
         <h2 className="text-4xl font-semibold">
-          Découvrez des refuges d'animaux avec notre carte interactive
+          Une histoire d'adoption qui fait chaud au coeur
         </h2>
         <div>
           <p>
-            Notre carte interactive permet de trouver simplement des refuges
-            d'animaux abandonnés. Trouvez votre futur compagnon dès maintenant
-            dans un de ces refuges !
+            Rencontrez Balto, un husky sibérien qui a trouvé son foyer pour la
+            vie après avoir été secouru par un refuge. Sa nouvelle famille le
+            décrit comme joueur, amenant joie et rires dans leur demeure.
           </p>
         </div>
         <div className="flex justify-end md:justify-start gap-4 mt-3 md:mt-0">
           <Link
             href="/"
-            className="px-4 py-2 hover:text-animalred-dark border-1 border-animalred hover:border-animaldark text-animalred dark:hover:text-animallight dark:hover:border-animallight"
+            className="px-4 py-2 bg-animalred text-animalred-light hover:text-animalred-dark"
           >
-            Trouver
+            S'informer
           </Link>
           <Link
             href="/"
             className="px-4 py-2 flex items-center  border-b-3 hover:text-animalred hover:border-animalred border-animalcopper border-dotted"
           >
-            Rechercher{" "}
+            Explorer{" "}
             <div className="mt-[4.00px] ps-3">
               <ChevronRight />
             </div>
@@ -42,4 +43,4 @@ const MapSection = () => {
   );
 };
 
-export default MapSection;
+export default TestimonySection;

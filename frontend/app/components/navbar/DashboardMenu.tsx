@@ -9,7 +9,7 @@ const DashboardMenu: React.FC<DashboardMenuProps> = ({ toggleDashboard }) => {
     <>
       <button
         type="button"
-        className="hidden md:block overflow-hidden rounded-full border border-gray-300 shadow-inner hover:ring-animalred ring-1 ring-transparent"
+        className="hidden md:block overflow-hidden rounded-full border border-gray-300 shadow-inner hover:ring-animalred ring-1 ring-transparent cursor-pointer"
         onClick={() => {
           toggleDashboard();
         }}

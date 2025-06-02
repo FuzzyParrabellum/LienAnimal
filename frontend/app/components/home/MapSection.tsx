@@ -5,7 +5,15 @@ const MapSection = () => {
   return (
     <div className=" flex flex-col md:flex-row-reverse md:h-full md:justify-center gap-10 items-center">
       <div className=" flex flex-col gap-4 px-3 md:max-w-[30rem] pt-12">
-        <p className="font-bold">Explorez</p>
+        <div className="flex items-center">
+          {/* <p className="font-bold pe-4">Explorez</p> */}
+          <span className="h-px flex-1 bg-gradient-to-r from-transparent to-animalred "></span>
+
+          <span className="shrink-0 px-4 font-bold">Explorez</span>
+
+          <span className="h-px flex-1 bg-gradient-to-l from-transparent to-animalred "></span>
+        </div>
+
         <h2 className="text-4xl font-semibold">
           Découvrez des refuges d'animaux avec notre carte interactive
         </h2>

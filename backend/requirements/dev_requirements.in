@@ -4,3 +4,9 @@ django-environ
 psycopg2-binary
 pillow
 django-cors-headers
+dj-rest-auth #a set of REST API endpoints to handle User Registration and Authentication tasks
+django-allauth # offer a fully integrated authentication app that allows for both local and social authentication
+djangorestframework
+djangorestframework-simplejwt
+channels
+daphne

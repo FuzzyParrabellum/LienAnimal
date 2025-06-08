@@ -6,24 +6,74 @@
 #
 asgiref==3.8.1
     # via
+    #   channels
+    #   daphne
     #   django
+    #   django-allauth
     #   django-cors-headers
+attrs==25.3.0
+    # via
+    #   service-identity
+    #   twisted
+autobahn==24.4.2
+    # via daphne
+automat==25.4.16
+    # via twisted
 build==1.2.2.post1
     # via pip-tools
+cffi==1.17.1
+    # via cryptography
+channels==4.2.2
+    # via -r requirements/dev_requirements.in
 click==8.2.1
     # via pip-tools
 colorama==0.4.6
     # via
     #   build
     #   click
+constantly==23.10.4
+    # via twisted
+cryptography==45.0.3
+    # via
+    #   autobahn
+    #   pyopenssl
+    #   service-identity
+daphne==4.2.0
+    # via -r requirements/dev_requirements.in
+dj-rest-auth==7.0.1
+    # via -r requirements/dev_requirements.in
 django==5.2.1
     # via
     #   -r requirements/dev_requirements.in
+    #   channels
+    #   dj-rest-auth
+    #   django-allauth
     #   django-cors-headers
+    #   djangorestframework
+    #   djangorestframework-simplejwt
+django-allauth==65.9.0
+    # via -r requirements/dev_requirements.in
 django-cors-headers==4.7.0
     # via -r requirements/dev_requirements.in
 django-environ==0.12.0
     # via -r requirements/dev_requirements.in
+djangorestframework==3.16.0
+    # via
+    #   -r requirements/dev_requirements.in
+    #   dj-rest-auth
+    #   djangorestframework-simplejwt
+djangorestframework-simplejwt==5.5.0
+    # via -r requirements/dev_requirements.in
+hyperlink==21.0.0
+    # via
+    #   autobahn
+    #   twisted
+idna==3.10
+    # via
+    #   hyperlink
+    #   twisted
+incremental==24.7.2
+    # via twisted
 packaging==25.0
     # via build
 pillow==11.2.1
@@ -32,16 +82,40 @@ pip-tools==7.4.1
     # via -r requirements/dev_requirements.in
 psycopg2-binary==2.9.10
     # via -r requirements/dev_requirements.in
+pyasn1==0.6.1
+    # via
+    #   pyasn1-modules
+    #   service-identity
+pyasn1-modules==0.4.2
+    # via service-identity
+pycparser==2.22
+    # via cffi
+pyjwt==2.9.0
+    # via djangorestframework-simplejwt
+pyopenssl==25.1.0
+    # via twisted
 pyproject-hooks==1.2.0
     # via
     #   build
     #   pip-tools
+service-identity==24.2.0
+    # via twisted
 sqlparse==0.5.3
     # via django
+twisted[tls]==25.5.0
+    # via daphne
+txaio==23.1.1
+    # via autobahn
+typing-extensions==4.14.0
+    # via
+    #   pyopenssl
+    #   twisted
 tzdata==2025.2
     # via django
 wheel==0.45.1
     # via pip-tools
+zope-interface==7.2
+    # via twisted
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip

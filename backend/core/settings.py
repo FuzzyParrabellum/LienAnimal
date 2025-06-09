@@ -115,7 +115,8 @@ else :
             "NAME": env('DATABASE_NAME'),
             "USER": env('DATABASE_USER'),
             "PASSWORD": env('DATABASE_PASSWORD'),
-            "HOST": env('DATABASE_HOST'),  # set in docker-compose.yml
+            # set in docker-compose.yml as db service name
+            "HOST": env('DATABASE_HOST'),  
             "PORT": env('DATABASE_PORT'),  # default postgres port
         }
     }
@@ -152,7 +153,7 @@ SIMPLE_JWT = {
     "BLACKLIST_AFTER_ROTATION": False,
     "UPDATE_LAST_LOGIN": True,
     # above will update last_login field of our personnalized user on login
-    "SIGNING_KEY": "ChangeMe",
+    "SIGNING_KEY": env('SECRET_KEY'),
     "ALGORITHM": "HS512",
 }
 

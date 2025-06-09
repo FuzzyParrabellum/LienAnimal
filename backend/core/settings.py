@@ -1,8 +1,10 @@
-from pathlib import Path
 import os
+import environ # For django-environ
+from pathlib import Path
+from datetime import timedelta
 
-# For django-environ
-import environ
+
+
 
 
 env = environ.Env()
@@ -37,6 +39,13 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_framework_simplejwt',
+    'allauth',
+    'allauth.account',
+    'dj_rest_auth',
+    'dj_rest_auth.registration'
 ]
 
 LOCAL_APPS = [
@@ -46,14 +55,15 @@ LOCAL_APPS = [
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware", # AJOUT
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware", # ADD
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware' # ADD
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -128,10 +138,50 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# ADD
-# personnalized user
-AUTH_USER_MODEL = 'users.User'
+# ADDS
+AUTH_USER_MODEL = 'users.User' # personnalized user
 
+SITE_ID = 1
+
+WEBSITE_URL = "http://localhost:8000"
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKEN": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": True,
+    # above will update last_login field of our personnalized user on login
+    "SIGNING_KEY": "ChangeMe",
+    "ALGORITHM": "HS512",
+}
+
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+}
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000', #django
+    'http://localhost:3000', #react
+]
+
+REST_AUTH = {
+    "USE_JWT": True,
+    "JWT_AUTH_HTTPONLY": False
+}
+
+# End of ADDS
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/

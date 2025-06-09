@@ -47,7 +47,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff=models.BooleanField(default=False)
 
     date_created=models.DateTimeField(auto_now=True)
-    date_updated=models.DateTimeField(blank=True, null=True)
+    last_login=models.DateTimeField(blank=True, null=True)
 
     objects = CustomUserManager()
 
